@@ -59,3 +59,10 @@ string ConsoleController::getAutoplayInput(wchar_t ch){
         }
     }
 };
+
+/*
+Es könnten nun weiter Controller beispielsweise in Form des Maus-Cursors implementiert werden.
+Hierfür könnte man die x-Koordinate des Cursors auf dem Spielfeld und die Position des Paddles abfragen und dann je nach Position die Kontrollanweisung "moveLeft" oder "moveRight" an die Funktion control_game des models übergeben.
+Wenn der Cursor sich rechts vom paddle befindet soll dieses sich nach rechts bewegt (links entsprechend).
+So könnte das Spiel mit einer Maus oder einem Touchpad gespielt werden.
+*/
