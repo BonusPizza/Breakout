@@ -171,8 +171,8 @@ void BreakoutModel::simulate_game_step()
     
     // Check for Ball collisions with paddle
     if(!start){
-        if(gameball->getY() >= height-0.5f){
-            if( gameball->getX() >= gamepaddle->getX() - (gamepaddle->getWidth()-1)/2  && gameball->getX() <= gamepaddle->getX() + (gamepaddle->getWidth()-1)/2){
+        if(gameball->getY() >= height-1){
+            if( gameball->getX() >= gamepaddle->getX() - gamepaddle->getWidth()/2  && gameball->getX() <= gamepaddle->getX() + gamepaddle->getWidth()/2){
                 gameball->reflectY();
                 if(specialBrickOneActivated) {
                     numberOfCollisionsLeft--; 
@@ -225,8 +225,8 @@ void BreakoutModel::control_game(std::string control){
         else if(lost){
             if(currentscore > highscore){
             highscore = currentscore;
+            }
             currentscore = 0;
-        }
             lost = false;
             start = true;
             restart();    
@@ -234,8 +234,8 @@ void BreakoutModel::control_game(std::string control){
         else if(won){
             if(currentscore > highscore){
                 highscore = currentscore;
-                currentscore = 0;
             }
+            currentscore = 0;
             won = false;
             start = true;
             restart(); 
